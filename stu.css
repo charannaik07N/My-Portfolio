@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -227,7 +226,6 @@ section {
     font-size: 1rem;
 }
 
-
 #contact {
     background: var(--card-background);
 }
@@ -292,6 +290,23 @@ form button:hover {
     nav .navlinks.open {
         right: 0;
     }
+
+    .container {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .hero-text {
+        padding: 40px 0;
+    }
+
+    .project-cards, .education-cards, .achievement-cards {
+        flex-direction: column;
+    }
+
+    .card, .education-card, .achievement-cards .card {
+        width: 100%;
+    }
 }
 
 @media(max-width: 768px) {
@@ -304,132 +319,98 @@ form button:hover {
         padding: 40px 0;
     }
 
-    .project-cards {
+    .project-cards, .education-cards, .achievement-cards {
         flex-direction: column;
     }
 
-    .card {
+    .card, .education-card, .achievement-cards .card {
         width: 100%;
     }
-    .education-cards {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
+
+    .education, .internship, .project {
+        width: 250px;
+        margin: 10px auto;
+        padding: 15px;
+        background-color: #000;
+        border-radius: 10px;
+    }
 }
 
-.card {
-background: var(--background-color);
-padding: 20px;
-border-radius: 10px;
-width: calc(50% - 20px); /* Adjust width for two cards per row */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-text-align: center;
-transition: transform 0.3s;
-}
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
 
-.card img {
-max-width: 100%;
-height: auto;
-border-radius: 5px;
-margin-bottom: 15px;
-}
+    .btn-group .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
 
-@media (max-width: 768px) {
-.card {
-width: 100%; /* Stack cards on small screens */
-}
-}
-/* Reduce the size of divs */
-.education, .internship, .project {
-    width: 250px; /* Adjust the width as needed */
-    margin: 10px auto; /* Center the divs and adjust spacing */
-    padding: 15px;
-    background-color: #000; /* Background color of the divs */
-    border-radius: 10px;
-}
+    .hero-text img {
+        width: 120px;
+        height: 120px;
+    }
 
+    form input, form textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 
-#achievements {
-background: var(--card-background);
-padding: 60px 0;
-}
+    form button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 
-.achievement-cards {
-display: flex;
-flex-wrap: wrap;
-height: 100px;
-gap: 20px;
-justify-content: center;
-}
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
 
-.achievement-cards .card {
-background: var(--background-color);
-padding: 20px;
-border-radius: 10px;
-width: calc(33.333% - 40px); /* Adjust as needed for the number of achievements per row */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-text-align: center;
-transition: transform 0.3s;
-}
+    .form-btn span {
+        font-size: 16px;
+    }
 
-.achievement-cards .card h3 {
-margin-bottom: 10px;
-font-size: 1.5rem;
-}
-
-.achievement-cards .card p {
-font-size: 1rem;
-}
-
-.achievement-cards .card:hover {
-transform: translateY(-10px);
+    .achievement-cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 html {
-scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 .navlinks {
-list-style-type: none;
-display: flex;
-justify-content: center;
-margin: 0;
-padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
 .navlinks li {
-margin-right: 15px;
+    margin-right: 15px;
 }
 
 .navlinks li a {
-text-decoration: none;
-color: black;
-transition: all 0.3s ease;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease;
 }
 
 .navlinks li a:hover {
-color: blue;
+    color: blue;
 }
 
 .navlinks li a.active {
-color: blue;
+    color: blue;
 }
-.account-page{
+
+.account-page {
     padding: 50px 0;
     background: radial-gradient(#fff,#ffd6d6);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 .form-container {
     background: #fff;
     width: 300px;
@@ -438,17 +419,20 @@ body {
     border-radius: 10px;
     text-align: center;
 }
+
 .form-btn {
     display: flex;
     justify-content: space-between;
     position: relative;
     margin-bottom: 20px;
 }
+
 .form-btn span {
     font-size: 18px;
     cursor: pointer;
     padding: 10px;
 }
+
 #indicator {
     width: 50%;
     height: 2px;
@@ -458,19 +442,23 @@ body {
     left: 0;
     transition: 0.3s;
 }
+
 form {
     display: none;
     transition: 0.3s;
 }
+
 form.active {
     display: block;
 }
+
 input {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
     box-sizing: border-box;
 }
+
 button {
     width: 100%;
     padding: 10px;
@@ -481,6 +469,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+
 a {
     color: #ff523b;
     text-decoration: none;
@@ -488,21 +477,122 @@ a {
     display: block;
     margin-top: 10px;
 }
-/* Ensure the send button is at the bottom */
+
 .contact-section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .send-button {
-    margin-top: 20px; /* Add space above the button */
+    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #000; /* Button background color */
+    background-color: #000;
     border: none;
     border-radius: 5px;
-    color: #fff; /* Button text color */
+    color: #fff;
     cursor: pointer;
 }
 
-}
+@media (max-width: 720px) {
+    nav .togglebtn {
+        display: initial;
+    }
 
+    nav .navlinks {
+        position: absolute;
+        top: 110px;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--secondary-color);
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+    nav .navlinks li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    nav .navlinks.open {
+        right: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .hero-text {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-text img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .btn-group .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    .project-cards, .education-cards, .achievement-cards {
+        flex-direction: column;
+    }
+
+    .card, .education-card, .achievement-cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    form input, form textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    form button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form-btn span {
+        font-size: 16px;
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+
+    .send-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .education, .internship, .project {
+        width: 250px;
+        margin: 10px auto;
+        padding: 15px;
+        background-color: #000;
+        border-radius: 10px;
+    }
+}
