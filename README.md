@@ -2,6 +2,11 @@
 
 This is a personal portfolio website for Charan, showcasing projects, education, internships, and contact information. The website highlights Charan's skills and experience as a web developer, including links to projects and professional profiles.
 
+languages used 
+is html css javascript and php
+hack is a language for devoleper where both html and pfp is combined 
+
+
 ## Features
 
 - **Responsive Design**: The website is designed to be responsive, ensuring it looks great on both desktop and mobile devices.
